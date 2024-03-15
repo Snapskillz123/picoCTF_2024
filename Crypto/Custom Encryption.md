@@ -1,12 +1,12 @@
 # Custom encryption
 
 Given code is a diffie hellman encryption
-I used chatGPT for getting decryption code and for cipher text i put the info given in the question.
+I used chatGPT to get the decryption code and for cipher text, I put the info given in the question.
 
 a = 95
 b = 21
 text_key = "trudeau"
-cipher = [237915, 1850450, 1850450, 158610, 2458455, 2273410, 1744710, 1744710, 1797580, 1110270, 0, 2194105, 555135, 132175, 1797580, 0, 581570, 2273410, 26435, 1638970, 634440, 713745, 158610, 158610, 449395, 158610, 687310, 1348185, 845920, 1295315, 687310, 185045, 317220, 449395]
+cipher = [131553, 993956, 964722, 1359381, 43851, 1169360, 950105, 321574, 1081658, 613914, 0, 1213211, 306957, 73085, 993956, 0, 321574, 1257062, 14617, 906254, 350808, 394659, 87702, 87702, 248489, 87702, 380042, 745467, 467744, 716233, 380042, 102319, 175404, 248489]
 
 def generator(g, x, p):
     return pow(g, x) % p
@@ -41,6 +41,10 @@ semi_cipher = decrypt(cipher, b_key)
 flag_rev = dynamic_xor_decrypt(semi_cipher, text_key)
 
 print(f'flag : {"".join(x for x in flag_rev[::-1])}')
+
+# Flag
+
+picoCTF{custom_d2cr0pt6d_8b41f976}
 
 On running this code we get the flag.
 
